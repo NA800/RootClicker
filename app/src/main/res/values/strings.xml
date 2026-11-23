@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">点击器</string>
+    <string name="a11y_desc">点击器使用此服务在屏幕上执行您设定的点击和长按手势，不会读取屏幕内容。</string>
+</resources>
