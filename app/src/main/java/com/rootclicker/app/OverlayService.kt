@@ -357,9 +357,9 @@ class OverlayService : Service() {
         }
 
         fun circle(label: String, fill: Int, fg: Int, last: Boolean = false, onClick: () -> Unit): TextView =
-            AppleGlassUi.circleButton(ctx, label, 42, 12f, fill, fg, 0, onClick).apply {
-                layoutParams = LinearLayout.LayoutParams(dp(42), dp(42)).apply {
-                    if (!last) marginEnd = dp(8)
+            AppleGlassUi.circleButton(ctx, label, 34, 12f, fill, fg, 0, onClick).apply {
+                layoutParams = LinearLayout.LayoutParams(dp(34), dp(34)).apply {
+                    if (!last) marginEnd = dp(4)
                 }
             }
 
@@ -405,12 +405,12 @@ class OverlayService : Service() {
         stats.addView(rateText)
         val bigStop = TextView(ctx).apply {
             text = "停止"
-            textSize = 17f
+            textSize = 15f
             typeface = Typeface.create("sans-serif-medium", Typeface.BOLD)
             gravity = Gravity.CENTER
             setTextColor(Color.WHITE)
             background = AppleGlassUi.roundBg(ctx, AppleGlassUi.ACCENT_RED, 23f, 0, 0x33FFFFFF)
-            layoutParams = LinearLayout.LayoutParams(dp(100), dp(48))
+            layoutParams = LinearLayout.LayoutParams(dp(84), dp(40))
         }
         AppleGlassUi.onPressDown(bigStop) { stopClicks() }
         run.addView(stats)
@@ -837,7 +837,7 @@ class OverlayService : Service() {
     private fun startClicks() {
         if (running.get()) return
         if (points.isEmpty()) {
-            toast("请先点“增加”添加点击点")
+            toast("请先点“增加”添加至少一个点击点")
             return
         }
         val mode = PresetManager.getMode(this)
