@@ -615,8 +615,8 @@ class OverlayService : Service() {
         val (w, h) = screenSize()
         val stagger = (points.size % 8) * dp(14)
         val pt = ClickPoint(
-            x = (w / 2 - dp(17) + stagger).coerceIn(0, max(0, w - dp(34))),
-            y = (h / 2 - dp(17) + stagger).coerceIn(0, max(0, h - dp(34))),
+            x = (w / 2 - dp(15) + stagger).coerceIn(0, max(0, w - dp(26))),
+            y = (h / 2 - dp(15) + stagger).coerceIn(0, max(0, h - dp(26))),
             count = 1,
             intervalMs = PresetManager.getDefaultIntervalMs(this),
             tapDurationMs = PresetManager.getDefaultTapMs(this),
@@ -630,10 +630,10 @@ class OverlayService : Service() {
     }
 
     private fun addMarker(point: ClickPoint) {
-        val diameter = dp(34)
+        val diameter = dp(26)
         val v = TextView(this).apply {
             text = (points.indexOf(point) + 1).toString()
-            textSize = 13f
+            textSize = 10f
             typeface = Typeface.create("sans-serif-medium", Typeface.BOLD)
             gravity = Gravity.CENTER
             includeFontPadding = false
